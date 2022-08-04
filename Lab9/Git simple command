@@ -1,0 +1,8 @@
+git add
+git add . (thêm tất cả file)
+git checkout *** (*** = id của commit)
+git switch - (undo lại thao tác checkout)
+git remote add origin https:****** (kết nối với repo)
+git branch -M main
+git push -u origin main
+git commit -a -m ""
