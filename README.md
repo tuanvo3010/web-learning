@@ -1,2 +1,2 @@
-Hello I'm Tuan.
-I'm 24yrs old.
+Hello I'm Tuan
+This is my repository using for learning Frontend Development. I will publish all my code included in lab study, excercise and personal project in here.
