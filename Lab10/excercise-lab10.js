@@ -6,8 +6,11 @@
  *
  * @return {number} Chu vi hình chữ nhật
  */
-function findPerimeterOfRectangle(length, breadth) {}
-
+function findPerimeterOfRectangle(length, breadth) {
+  return (length + breadth) * 2;
+  // (Dài + rộng) * 2
+}
+console.log("Chu vi hình chữ nhật = " + findPerimeterOfRectangle(10, 5) + "m");
 /**
  * Tính diện tích hình chữ nhật
  *
@@ -16,8 +19,11 @@ function findPerimeterOfRectangle(length, breadth) {}
  *
  * @return {number} Diện tích hình chữ nhật
  */
-function findAreaOfRectangle(length, breadth) {}
-
+function findAreaOfRectangle(length, breadth) {
+  return length * breadth;
+  // Dài * rộng
+}
+console.log("Diện tích hình chữ nhật = " + findAreaOfRectangle(10, 5) + "m²");
 /**
  * Tìm đường kính hình tròn
  *
@@ -25,8 +31,11 @@ function findAreaOfRectangle(length, breadth) {}
  *
  * @return {number} Đường kính hình tròn
  */
-function findDiameterOfCircle(r) {}
-
+function findDiameterOfCircle(r) {
+  return r * 2;
+  // Đường kính = bán kính * 2
+}
+console.log("Đường kính hình tròn = " + findDiameterOfCircle(10) + "m");
 /**
  * Tìm chu vi hình tròn
  *
@@ -36,8 +45,11 @@ function findDiameterOfCircle(r) {}
  *
  * @return {number} Chu vi hình tròn
  */
-function findCircumferenceOfCircle(r) {}
-
+function findCircumferenceOfCircle(r) {
+  return 2 * 3.14 * r;
+  // Chu vi hình tròn = 2πr
+}
+console.log("Chu vi hình tròn = " + findCircumferenceOfCircle(10) + "m");
 /**
  * Tìm diện tích hình tròn
  *
@@ -49,8 +61,11 @@ function findCircumferenceOfCircle(r) {}
  *
  * @return {number} Diện tích hình tròn
  */
-function findAreaOfCircle(r) {}
-
+function findAreaOfCircle(r) {
+  return 3.14 * Math.pow(r, 2);
+  // Diện tích hình tròn = πr²
+}
+console.log("Diện tích hình tròn = " + findAreaOfCircle(10) + "m²");
 /**
  * Tính diện tích hình tam giác theo công thức Heron
  *
@@ -62,8 +77,13 @@ function findAreaOfCircle(r) {}
  *
  * @return {number} Diện tích hình tam giác
  */
-function findAreaOfTriangle(a, b, c) {}
 
+function findAreaOfTriangle(a, b, c) {
+    const p = (a + b + c) / 2 // p là nửa chu vi
+    return Math.sqrt(p * (p - a) * (p - b) * (p - c));
+//    return Math.sqrt((a + b + c) * (a + b - c) * (b + c - a) * (c + a - b)) / 4; // Same result
+}
+console.log("Diện tích hình tam giác = " + findAreaOfTriangle(3, 4, 5) + "m²");
 /**
  * Chuyển đổi nhiệt ở ở thang nhiệt Celsius sang Fahrenheit
  *
@@ -73,4 +93,7 @@ function findAreaOfTriangle(a, b, c) {}
  *
  * @return {number} Nhiệt độ ở thang nhiệt Fahrenheit
  */
-function celsiusToFahrenheit(temp) {}
+function celsiusToFahrenheit(temp) {
+    return temp * 1.8 + 32;
+}
+console.log(celsiusToFahrenheit(34) + "℉");
