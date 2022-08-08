@@ -62,7 +62,7 @@ console.log("Chu vi hình tròn = " + findCircumferenceOfCircle(10) + "m");
  * @return {number} Diện tích hình tròn
  */
 function findAreaOfCircle(r) {
-  return 3.14 * Math.pow(r, 2);
+  return Math.pow(3.14 * r, 2);
   // Diện tích hình tròn = πr²
 }
 console.log("Diện tích hình tròn = " + findAreaOfCircle(10) + "m²");
@@ -79,9 +79,9 @@ console.log("Diện tích hình tròn = " + findAreaOfCircle(10) + "m²");
  */
 
 function findAreaOfTriangle(a, b, c) {
-    const p = (a + b + c) / 2 // p là nửa chu vi
-    return Math.sqrt(p * (p - a) * (p - b) * (p - c));
-//    return Math.sqrt((a + b + c) * (a + b - c) * (b + c - a) * (c + a - b)) / 4; // Same result
+  const p = (a + b + c) / 2; // p là nửa chu vi
+  return Math.sqrt(p * (p - a) * (p - b) * (p - c));
+  //    return Math.sqrt((a + b + c) * (a + b - c) * (b + c - a) * (c + a - b)) / 4; // Same result
 }
 console.log("Diện tích hình tam giác = " + findAreaOfTriangle(3, 4, 5) + "m²");
 /**
@@ -94,6 +94,6 @@ console.log("Diện tích hình tam giác = " + findAreaOfTriangle(3, 4, 5) + "m
  * @return {number} Nhiệt độ ở thang nhiệt Fahrenheit
  */
 function celsiusToFahrenheit(temp) {
-    return temp * 1.8 + 32;
+  return temp * 1.8 + 32;
 }
 console.log(celsiusToFahrenheit(34) + "℉");
