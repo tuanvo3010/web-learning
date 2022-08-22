@@ -158,6 +158,7 @@ let student = [
   { Name: "Đăng", Age: 20 },
   { Name: "Tuấn", Age: 23 },
   { Name: "Phi", Age: 21 },
+  { Name: "Hà", Age: 22 },
 ];
 function averageAge(arr) {
   let sumOfAge = 0;
@@ -169,7 +170,21 @@ function averageAge(arr) {
 console.log(averageAge(student));
 
 // 2.
-    student.sort(function (student1, student2) {
-        return student2.Age - student1.Age;
-})
+student.sort(function (student1, student2) {
+  return student2.Age - student1.Age;
+});
 console.log(student);
+
+//3.
+student.sort(function (student1, student2) {
+  return student1.Name > student2.Name ? 1 : -1;
+});
+console.log(student);
+
+// 4.
+  let result = []
+  for (i = 0; i < student.length; i++){
+    if (student[i].Name.charAt(0) == "H")
+      result.push(student[i])
+}
+console.log(result)
