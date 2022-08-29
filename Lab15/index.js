@@ -79,11 +79,12 @@ let users = [
   { name: "Tuấn", age: 23 },
   { name: "Phi", age: 25 },
 ];
+// sắp xếp tuổi
 users.sort(function (user1, user2) {
   return user1.age - user2.age;
 });
 console.log(users);
-
+// sắp xếp tên
 users.sort(function (user1, user2) {
   return user1.name > user2.name ? 1 : -1;
 });
@@ -99,7 +100,6 @@ console.log(users);
 // reduce() - Tổng hợp, ghép các giá trị trong mảng
 
 // sort() - Sắp xếp các giá trị trong mảng
-
 
 // Các giá trị tháng thì tính từ 0-11
 // Giờ tính từ 0-23

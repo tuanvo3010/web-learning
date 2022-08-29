@@ -109,6 +109,23 @@ console.log(checkSymmetry("racecar"));
 // }
 // console.log(includes("Hello World", "wor"));
 
+function contains(str, char) {
+  const originalChars = str.toLowerCase().split("");
+  const subChars = char.toLowerCase();
+  let flag = true;
+  for (const char of subChars) {
+    const index = originalChars.indexOf(char);
+    if (index === -1) {
+      // không chứa
+      flag = false;
+      break;
+    } else {
+      originalChars.splice(index, 1);
+    }
+  }
+  return flag;
+}
+console.log(contains("Hello world", "llo"));
 // Xử lí mảng
 // 1.
 let arr = [1, "test", undefined, null, 5, false, "đúng", 3, "", NaN];
@@ -150,7 +167,22 @@ function theOnly(arr1, arr2) {
 console.log(theOnly([1, 2, 3], [1, 3, 4, 5, 5]));
 
 // 4.
-
+function ziczac(row, col) {
+  const matrix = [];
+  for (let i = 1; i <= row; i++) {
+    const r = [];
+    for (let j = 1; j <= col; j++) {
+      if (i % 2 == 0) {
+        r.unshift((i - 1) * col + j);
+      } else {
+        r.push((i - 1) * col + j);
+      }
+    }
+    matrix.push(r);
+  }
+  return matrix;
+}
+console.log(ziczac(5, 4));
 // Xử lí object
 // 1.
 let student = [
@@ -182,9 +214,26 @@ student.sort(function (student1, student2) {
 console.log(student);
 
 // 4.
-  let result = []
-  for (i = 0; i < student.length; i++){
-    if (student[i].Name.charAt(0) == "H")
-      result.push(student[i])
+let result = [];
+for (i = 0; i < student.length; i++) {
+  if (student[i].Name.charAt(0) == "H") result.push(student[i]);
 }
-console.log(result)
+console.log(result);
+
+// Tổng hợp
+// 4.
+function sortNumbers(n) {
+  const numbers = String(n).split("").sort(); // cắt các chữ số thành mảng
+  const firstPositiveIndex = numbers.findIndex(function (n) {
+    return Number(n) !== 0;
+  });
+  if (firstPositiveIndex !== 0) {
+    // số đầu tiên khác 0 không nằm ở vị trí đầu tiên
+    // đổi chỗ 2 số
+    const temp = numbers[0];
+    numbers[0] = numbers[firstPositiveIndex];
+    numbers[firstPositiveIndex] = temp;
+  }
+  return Number(numbers.join(""));
+}
+console.log(sortNumbers(3546210));

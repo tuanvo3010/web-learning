@@ -11,7 +11,7 @@ document.querySelector(".profile").href = profile;
 
 //7.
 let time = new Date().toLocaleString("vi-VN");
-document.querySelector(".clock").innerHTML += " " + time;
+document.querySelector(".clock").innerHTML += " " + time; // += để chèn thêm vào chứ không thay thế hoàn toàn
 
 //8.
 let p = document.querySelector(".bio").innerHTML;

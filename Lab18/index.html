@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function () {
+            console.log("Load finished");
+            document.getElementById("app").style.backgroundColor = "#ddd"
+        }
+        window.onresize = function () {
+            console.log("Width:", window.innerWidth);
+            console.log("Height:", window.innerHeight);
+            console.log();
+        }
+    </script>
+</head>
+
+<body>
+    <div id="app">
+        <div class="container">
+            <button onclick="handleClick()">Click đeeeeeeeeeeeee</button>
+            <select name="" id="select">
+                <option value="1">option 1</option>
+                <option value="2">option 2</option>
+                <option value="3">option 3</option>
+            </select>
+            <input type="text" id="input" onkeypress="myAlert()">
+            <a href="https://google.com">google</a>
+            <section class="section section-newest">
+                <div class="section-header">
+                    <h2 class="section-heading">Tập mới nhất</h2>
+                </div>
+                <div class="section-content">
+                    <div class="list-movie">
+                        <!-- <div class="movie">
+                            <a href=""><div class="movie-thumbnail">
+                                <img src="https://s199.imacdn.com/vg/2022/08/26/69542ac365a4ceaf_691065b247e2ebae_23003166150547413.jpg"
+                                    alt="">
+                            </div>
+                            <div class="movie-description">
+                                <div class="movie-title">Renmei Kuugun Koukuu Mahou Ongakutai Luminous Witches</div>
+                                <div class="movie-meta-info">
+                                    <div class="episode-title">
+                                        Tập 7 - Lý do của Mặt Trời
+                                    </div>
+                                    <div class="episode-views">337</div>
+                                </div>
+                            </div></a>
+                        </div> -->
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+
+</html>
