@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Todo List</h1>
+        <div class="todo-input">
+            <input type="text" placeholder="Nhập công việc cần làm" name="" id="todo-input">
+            <button id="btn-add">Add</button>
+        </div>
+
+        <div class="todo-checklist">
+            <div class="todo-checklist-item">
+                <input type="radio" name="todo-checklist-item" id="all" checked value="1">
+                <label for="all">Tất cả công việc</label>
+            </div>
+            <div class="todo-checklist-item">
+                <input type="radio" name="todo-checklist-item" id="unfinished" value="2">
+                <label for="unfinished">Chưa hoàn thành</label>
+            </div>
+            <div class="todo-checklist-item">
+                <input type="radio" name="todo-checklist-item" id="finished" value="3">
+                <label for="finished">Hoàn thành</label>
+            </div>
+        </div>
+        
+        <div class="checklist-container">
+            <div class="checklist">
+                <div class="checklist-item checklist-active">
+                    <div class="checklist-item-title">
+                        <input type="checkbox">
+                        <p>Du lịch 2/9</p>
+                    </div>
+                    <div class="option">
+                        <button class="btn btn-edit">
+                            <img src="./img/edit.png" alt="">
+                        </button>
+                        <button class="btn btn-delete">
+                            <img src="./img/delete.png" alt="">
+                        </button>
+                    </div>
+                </div>
+                <div class="checklist-item">
+                    <div class="checklist-item-title">
+                        <input type="checkbox">
+                        <p>Đi nhậu</p>
+                    </div>
+                    <div class="option">
+                        <button class="btn btn-edit">
+                            <img src="./img/edit.png" alt="">
+                        </button>
+                        <button class="btn btn-delete">
+                            <img src="./img/delete.png" alt="">
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="./script.js"></script>
+</body>
+
+</html>

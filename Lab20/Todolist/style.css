@@ -1,0 +1,136 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(211, 211, 211);
+    height: 100vh;
+}
+
+.container{
+    background-color: rgb(94, 40, 40);
+    padding: 50px;
+}
+h1{
+text-transform: capitalize;
+text-align: center;
+margin-bottom: 25px;
+font-size: 36px;
+}
+
+.todo-input{
+    height: 40px;
+    padding: 0 16px;
+}
+.todo-input input{
+min-width: 400px;
+height: 100%;
+padding: 0 8px 0 8px;
+line-height: 40px;
+outline: none;
+}
+
+.todo-input button{
+    text-transform: uppercase;
+    display: inline-block;
+    height: 100%;
+    padding: 0 40px;
+    border: 1px solid gray;
+    cursor: pointer;
+    background-color: rgb(78, 78, 78);
+    color: #fff;
+    transition: all 0.3s ease-in;
+}
+
+.todo-input button:hover{
+    background-color: rgb(251, 255, 0);
+    color: red;
+}
+
+.todo-checklist{ 
+    display: flex;
+    justify-content: flex-end;
+    padding: 0px 16px 0px 16px;
+    margin-top: 14px;
+}
+
+.todo-checklist-item{
+    border: 1px solid gray;
+    padding: 8px;
+    margin-left: 8px;
+    font-size: 14px;
+    display: flex;
+}
+
+.todo-checklist-item input{
+    margin-right: 6px ;
+}
+
+.checklist-container{
+    margin-top: 20px;
+}
+
+.checklist-item{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #fff;
+    margin-bottom: 6px;
+    padding: 16px 10px;
+    margin: 0 16px;
+}
+
+.checklist-item.checklist-active .checklist-item-title p{
+    font-style: italic;
+    position: relative; 
+}
+
+.checklist-item.checklist-active .checklist-item-title p::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    height: 2px;
+    width: 100%;
+    background-color: #fff;
+}
+
+.checklist-item-title{
+    display: flex;
+    align-items: center;
+}
+
+.checklist-item-title input{
+    margin-right: 6px;
+}
+
+.btn{
+    opacity: 0;
+    border: none;
+    outline: none;
+    background-color: #fff;
+    cursor: pointer;
+    transition: all 0.2s ease-in;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+.checklist-item:hover .btn{
+    opacity: 1;
+}
+
+img{
+    max-width: 100%;
+}
+.btn img{
+    display: inline-block;
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+}
