@@ -21,21 +21,34 @@ let products = [
   },
 ];
 
+let promotionCode = {
+  A: 10,
+  B: 20,
+  C: 30,
+  D: 40,
+};
+
 let productsElement = document.querySelector(".products");
+let subTotal = document.querySelector(".subtotal span");
+let vat = document.querySelector(".vat span");
+let total = document.querySelector(".total span");
+let inputPromotion = document.querySelector("#promo-code");
+let discount = document.querySelector(".discount");
+let discountElement = document.querySelector(".discount span");
 
 function renderUI(arr) {
   productsElement.innerHTML = "";
 
   //Update số lượng sản phẩm
   let countElement = document.querySelector(".count");
-  countElement.innerText = `${updateTotalItem(arr)} sản phẩm trong giở hàng`;
+  countElement.innerText = `${updateTotalItem(arr)} sản phẩm trong giỏ hàng`;
 
   // Kiểm tra giỏ hàng trống hay không
   if (arr.length == 0) {
     productsElement.insertAdjacentHTML("afterbegin", "<li>Giỏ hàng trống</li>");
     document.querySelector(".option-container").style.display = "none";
   }
-
+  updateTotalMoney(arr);
   for (i = 0; i < arr.length; i++) {
     const p = arr[i];
     productsElement.innerHTML += `
@@ -68,8 +81,7 @@ function renderUI(arr) {
                 </div>
             </li>
         `;
-    }
-    updateTotalMoney(arr);
+  }
 }
 
 // Đổi sang đơn vị tiền VND
@@ -109,18 +121,37 @@ function changeProductQuantity(id, e) {
 }
 
 // Tính tiền
-let subTotal = document.querySelector(".subtotal span");
-let vat = document.querySelector(".vat span");
-let total = document.querySelector(".total span");
-
 
 function updateTotalMoney(arr) {
   let totalMoney = 0;
+  let discountMoney = 0;
   for (i = 0; i < arr.length; i++) {
     const p = arr[i];
     totalMoney += p.count * p.price;
   }
+  let data = checkPromotion();
+  if (data) {
+    discountMoney = (totalMoney * data) / 100;
+    discount.classList.remove("hide");
+  } else {
+    discount.classList.add("hide");
+  }
   subTotal.innerText = convertMoney(totalMoney);
   vat.innerText = convertMoney(totalMoney * 0.05);
-  total.innerText = convertMoney(totalMoney * 1.05);
+  discountElement.innerText = convertMoney(discountMoney);
+  total.innerText = convertMoney(totalMoney * 1.05 - discountMoney);
 }
+
+// Kiểm tra mã giảm giá
+function checkPromotion() {
+  let value = inputPromotion.value;
+  if (promotionCode[value]) {
+    return promotionCode[value];
+  }
+  return 0;
+}
+let btnPromotion = document.querySelector(".promotion button");
+
+btnPromotion.addEventListener("click", function () {
+  updateTotalMoney(products);
+});
