@@ -1,0 +1,84 @@
+* {
+  box-sizing: border-box;
+  margin: 0 !important;
+  padding: 0 !important;
+  font-size: 16px;
+  font-family: "Marcellus";
+
+  /* font-family: 'Poppins', sans-serif; */
+}
+
+.container-fluid {
+  padding: 0px 50px 0px 50px !important;
+}
+
+.navbar {
+  height: 105px;
+  font-family: "Marcellus";
+}
+
+.nav-item {
+  height: 100%;
+}
+
+.nav-link {
+  font-size: 16px;
+  font-family: "Marcellus";
+  font-weight: 400;
+  text-transform: uppercase;
+  color: #262613;
+  padding: 38px 18px !important;
+}
+
+.nav-link:hover {
+  color: #f46a32;
+  transition: ease 300ms;
+}
+.account-item {
+  text-decoration: none;
+  color: #262613;
+  padding: 15px !important;
+}
+
+.account-item:hover {
+  color: #f46a32;
+  transition: ease 300ms;
+}
+
+.logo img {
+  width: 200px;
+}
+
+.navbar-right a {
+  color: #262613;
+}
+
+.navbar-right_item {
+  padding: 20px !important;
+}
+
+.navbar-right_item > a {
+  font-size: 24px;
+  padding: 10px;
+}
+
+.navbar-right_item > a:hover {
+  color: #f46a32;
+  transition: ease 300ms;
+}
+
+.cart-number {
+  display: flex;
+  width: 20px;
+  height: 20px;
+  right: -5px;
+  bottom: -5px;
+  background-color: #f89f7b;
+  font-family: "Poppins";
+  border-radius: 50%;
+  font-style: normal;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 11px;
+}
